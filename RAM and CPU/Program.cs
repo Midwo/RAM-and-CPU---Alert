@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,31 @@ namespace RAM_and_CPU
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+        }
+         public class DataProgramContext : DbContext
+        {
+
+            public DataProgramContext() : base("BaseCPURAM")
+            {
+                Database.SetInitializer<DataProgramContext>(new DataProgramContextSeed());
+
+
+            }
+
+            public DbSet<ValueCpuAndRam> ExtensionDB { get; set; }
+            public DbSet<ListEmails> ListEmailsDB { get; set; }
+        }
+
+        public class DataProgramContextSeed : DropCreateDatabaseIfModelChanges<DataProgramContext>
+        {
+
+            protected override void Seed(DataProgramContext context)
+            {
+
+      
+
+                base.Seed(context);
+            }
         }
     }
 }

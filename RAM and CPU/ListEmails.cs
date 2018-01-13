@@ -8,7 +8,7 @@ namespace RAM_and_CPU
 {
     class ListEmails
     {
-        public int EmailsListId { get; set; }
+        public int ListEmailsId { get; set; }
         public string AdresseEmail { get; set; }
     }
 }

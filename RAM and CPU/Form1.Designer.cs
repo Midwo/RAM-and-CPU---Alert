@@ -40,12 +40,12 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.konfiguracjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.konfiguracjaKontaEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ListaEmailOdbiorcówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informacjaOAutorzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grafikaUżytaWProjekcieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.konfiguracjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.konfiguracjaKontaEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ListaEmailOdbiorcówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -89,7 +89,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(6, 27);
+            this.groupBox1.Location = new System.Drawing.Point(6, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(235, 73);
             this.groupBox1.TabIndex = 3;
@@ -140,19 +140,46 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(621, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(621, 43);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 47;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // pomocToolStripMenuItem
+            // 
+            this.pomocToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informacjaOAutorzeToolStripMenuItem,
+            this.grafikaUżytaWProjekcieToolStripMenuItem});
+            this.pomocToolStripMenuItem.Image = global::RAM_and_CPU.Properties.Resources.icons8_information_35;
+            this.pomocToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.pomocToolStripMenuItem.Name = "pomocToolStripMenuItem";
+            this.pomocToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.pomocToolStripMenuItem.Size = new System.Drawing.Size(111, 39);
+            this.pomocToolStripMenuItem.Text = "Informacje";
+            // 
+            // informacjaOAutorzeToolStripMenuItem
+            // 
+            this.informacjaOAutorzeToolStripMenuItem.Name = "informacjaOAutorzeToolStripMenuItem";
+            this.informacjaOAutorzeToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.informacjaOAutorzeToolStripMenuItem.Text = "Informacja o autorze";
+            this.informacjaOAutorzeToolStripMenuItem.Click += new System.EventHandler(this.informacjaOAutorzeToolStripMenuItem_Click);
+            // 
+            // grafikaUżytaWProjekcieToolStripMenuItem
+            // 
+            this.grafikaUżytaWProjekcieToolStripMenuItem.Name = "grafikaUżytaWProjekcieToolStripMenuItem";
+            this.grafikaUżytaWProjekcieToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.grafikaUżytaWProjekcieToolStripMenuItem.Text = "Grafika użyta w projekcie";
+            this.grafikaUżytaWProjekcieToolStripMenuItem.Click += new System.EventHandler(this.grafikaUżytaWProjekcieToolStripMenuItem_Click);
             // 
             // konfiguracjaToolStripMenuItem
             // 
             this.konfiguracjaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.konfiguracjaKontaEmailToolStripMenuItem,
             this.ListaEmailOdbiorcówToolStripMenuItem});
+            this.konfiguracjaToolStripMenuItem.Image = global::RAM_and_CPU.Properties.Resources.icons8_administrative_tools_35;
             this.konfiguracjaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.konfiguracjaToolStripMenuItem.Name = "konfiguracjaToolStripMenuItem";
-            this.konfiguracjaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.konfiguracjaToolStripMenuItem.Size = new System.Drawing.Size(85, 39);
             this.konfiguracjaToolStripMenuItem.Text = "Menu";
             // 
             // konfiguracjaKontaEmailToolStripMenuItem
@@ -173,29 +200,6 @@
             this.ListaEmailOdbiorcówToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.ListaEmailOdbiorcówToolStripMenuItem.Text = "Lista E-mail - odbiorcy";
             this.ListaEmailOdbiorcówToolStripMenuItem.Click += new System.EventHandler(this.ListaEmailOdbiorcówToolStripMenuItem_Click);
-            // 
-            // pomocToolStripMenuItem
-            // 
-            this.pomocToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informacjaOAutorzeToolStripMenuItem,
-            this.grafikaUżytaWProjekcieToolStripMenuItem});
-            this.pomocToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.pomocToolStripMenuItem.Name = "pomocToolStripMenuItem";
-            this.pomocToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pomocToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.pomocToolStripMenuItem.Text = "Informacje";
-            // 
-            // informacjaOAutorzeToolStripMenuItem
-            // 
-            this.informacjaOAutorzeToolStripMenuItem.Name = "informacjaOAutorzeToolStripMenuItem";
-            this.informacjaOAutorzeToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.informacjaOAutorzeToolStripMenuItem.Text = "Informacja o autorze";
-            // 
-            // grafikaUżytaWProjekcieToolStripMenuItem
-            // 
-            this.grafikaUżytaWProjekcieToolStripMenuItem.Name = "grafikaUżytaWProjekcieToolStripMenuItem";
-            this.grafikaUżytaWProjekcieToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.grafikaUżytaWProjekcieToolStripMenuItem.Text = "Grafika użyta w projekcie";
             // 
             // Form1
             // 
