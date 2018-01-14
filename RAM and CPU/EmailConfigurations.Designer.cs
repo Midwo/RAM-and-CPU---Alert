@@ -205,7 +205,7 @@
             this.bTest.Text = "Test konfiguracji";
             this.bTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bTest.UseVisualStyleBackColor = false;
-            this.bTest.Click += new System.EventHandler(this.bTest_Click);
+            this.bTest.Click += new System.EventHandler(this.BTest_Click);
             // 
             // bSave
             // 
@@ -219,7 +219,7 @@
             this.bSave.Size = new System.Drawing.Size(67, 53);
             this.bSave.TabIndex = 38;
             this.bSave.UseVisualStyleBackColor = false;
-            this.bSave.Click += new System.EventHandler(this.bSave_Click);
+            this.bSave.Click += new System.EventHandler(this.BSave_Click);
             // 
             // EmailConfigurations
             // 

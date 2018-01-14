@@ -29,7 +29,7 @@ namespace RAM_and_CPU
 
             }
 
-            public DbSet<ValueCpuAndRam> ExtensionDB { get; set; }
+            public DbSet<ValueCpuAndRam> RAMCPUSAVE { get; set; }
             public DbSet<ListEmails> ListEmailsDB { get; set; }
         }
 

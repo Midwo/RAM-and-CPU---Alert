@@ -9,7 +9,8 @@ namespace RAM_and_CPU
     class ValueCpuAndRam
     {
         public int ValueCpuAndRamId { get; set; }
-        public string Cpu { get; set; }
-        public string Ram { get; set; }
+        public int Cpu { get; set; }
+        public int Ram { get; set; }
+        public int Time { get; set; }
     }
 }

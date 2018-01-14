@@ -57,7 +57,44 @@ namespace RAM_and_CPU
             tbSmtp.Text = "smtp.gmail.com";
         }
 
-        private void bTest_Click(object sender, EventArgs e)
+       
+
+        private void BSave_Click(object sender, EventArgs e)
+        {
+            System.Text.RegularExpressions.Regex rEmail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
+
+
+            if (!rEmail.IsMatch(tbNameAccount.Text.Trim()))
+            {
+                MessageBox.Show("Błedny format adreseu e-mail!", "Uwaga błąd!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbNameAccount.SelectAll();
+
+            }
+            else
+            {
+
+                if (tbNameAccount.Text.Trim().Length > 0 && mtbPassword.Text.Trim().Length > 0 && tbSignature.Text.Trim().Length > 0 && tbSmtp.Text.Trim().Length > 0 && tbPort.Text.Trim().Length > 0)
+                {
+                    Microsoft.Win32.RegistryKey key;
+                    key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("MD - RAM CPU");
+                    key.SetValue("Name", tbNameAccount.Text.Trim());
+                    key.SetValue("Password", mtbPassword.Text.Trim());
+                    key.SetValue("Signature", tbSignature.Text.Trim());
+                    key.SetValue("SMTP", tbSmtp.Text.Trim());
+                    key.SetValue("Port", tbPort.Text.Trim());
+                    key.Close();
+
+                    MessageBox.Show("Zapisano poprawnie ustawienia", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Musisz wypełnić wszystkie pola", "Uwaga błąd!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+            }
+        }
+
+        private void BTest_Click(object sender, EventArgs e)
         {
             System.Text.RegularExpressions.Regex rEmail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
 
@@ -110,41 +147,6 @@ namespace RAM_and_CPU
                         MessageBox.Show(ex.Message, "Uwaga błąd!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                }
-                else
-                {
-                    MessageBox.Show("Musisz wypełnić wszystkie pola", "Uwaga błąd!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                }
-            }
-        }
-
-        private void bSave_Click(object sender, EventArgs e)
-        {
-            System.Text.RegularExpressions.Regex rEmail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
-
-
-            if (!rEmail.IsMatch(tbNameAccount.Text.Trim()))
-            {
-                MessageBox.Show("Błedny format adreseu e-mail!", "Uwaga błąd!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                tbNameAccount.SelectAll();
-
-            }
-            else
-            {
-
-                if (tbNameAccount.Text.Trim().Length > 0 && mtbPassword.Text.Trim().Length > 0 && tbSignature.Text.Trim().Length > 0 && tbSmtp.Text.Trim().Length > 0 && tbPort.Text.Trim().Length > 0)
-                {
-                    Microsoft.Win32.RegistryKey key;
-                    key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("MD - RAM CPU");
-                    key.SetValue("Name", tbNameAccount.Text.Trim());
-                    key.SetValue("Password", mtbPassword.Text.Trim());
-                    key.SetValue("Signature", tbSignature.Text.Trim());
-                    key.SetValue("SMTP", tbSmtp.Text.Trim());
-                    key.SetValue("Port", tbPort.Text.Trim());
-                    key.Close();
-
-                    MessageBox.Show("Zapisano poprawnie ustawienia", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
